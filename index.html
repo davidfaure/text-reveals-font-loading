@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text reveals that survive font loading</title>
+  </head>
+  <body>
+    <main class="demo">
+      <h1 class="demo__title" data-title>Sites that move the way people read</h1>
+
+      <section class="panel" aria-label="Demo controls">
+        <form class="panel__controls" data-controls>
+          <fieldset class="panel__delay">
+            <legend>The font arrives after</legend>
+            <label><input type="radio" name="delay" value="600" /> 0.6s</label>
+            <label><input type="radio" name="delay" value="1200" checked /> 1.2s</label>
+            <label><input type="radio" name="delay" value="2400" /> 2.4s</label>
+          </fieldset>
+          <label class="panel__masks"><input type="checkbox" name="masks" /> Show masks</label>
+          <button class="panel__reload" type="submit">Reload</button>
+        </form>
+        <ol class="panel__log" data-log aria-live="polite"></ol>
+        <p class="panel__note" data-note hidden></p>
+      </section>
+    </main>
+    <script type="module" src="/src/frame/frame.ts"></script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

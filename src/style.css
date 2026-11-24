@@ -1,0 +1,136 @@
+/* A real web font, swapped in when it arrives: the browser shows Arial until then */
+@font-face {
+  font-family: "Unbounded";
+  src: url("/fonts/unbounded-500.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #151c13;
+  color: #f9f1e7;
+  font: 14px/1.5 system-ui, sans-serif;
+}
+
+.demo {
+  display: grid;
+  gap: 48px;
+  padding: 64px 24px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.demo__title {
+  /* Sized in em: the same words fall on the same lines at every viewport width */
+  width: 7.4em;
+  margin: 0;
+  font-family: "Unbounded", Arial, sans-serif;
+  font-weight: 500;
+  font-size: clamp(32px, 6vw, 64px);
+  line-height: 1.1;
+  /* Hidden until SplitText has cut the lines, so the unsplit text never flashes */
+  visibility: hidden;
+}
+
+.show-masks .line-mask {
+  outline: 1px dashed rgb(249 241 231 / 0.5);
+}
+
+.show-masks .line-mask.is-broken {
+  outline: 2px solid #ff5b4a;
+}
+
+.panel {
+  display: grid;
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid rgb(249 241 231 / 0.2);
+}
+
+.panel__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 32px;
+}
+
+.panel__delay {
+  display: flex;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.panel__delay legend {
+  float: left;
+  margin-right: 8px;
+  opacity: 0.6;
+}
+
+.panel__reload {
+  padding: 8px 20px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.panel__reload:hover {
+  background: #f9f1e7;
+  color: #151c13;
+}
+
+.panel__log {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 13px;
+}
+
+.panel__log time {
+  display: inline-block;
+  width: 4.5em;
+  opacity: 0.6;
+}
+
+.panel__log .is-bad {
+  color: #ff5b4a;
+}
+
+.panel__log .is-good {
+  color: #9be28f;
+}
+
+.panel__note {
+  margin: 0;
+  opacity: 0.6;
+}
+
+.recording {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+
+.recording video {
+  width: 100%;
+  max-width: 560px;
+  border-radius: 4px;
+}
+
+.recording figcaption {
+  opacity: 0.6;
+}
