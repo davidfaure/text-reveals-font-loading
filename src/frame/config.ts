@@ -8,7 +8,8 @@ export const frame = {
   steps: {
     main: "text-reveals-font-loading-bug",
     ready: "text-reveals-font-loading-ready",
-    autosplit: "text-reveals-font-loading",
+    autosplit: "text-reveals-font-loading-autosplit",
+    both: "text-reveals-font-loading",
   } as Record<string, string>,
   tags: ["gsap", "splittext", "fonts"],
   // Empty until the effect ships in Alcide
