@@ -133,7 +133,7 @@ export function inspect(title: HTMLElement, slowed: boolean): void {
     arrived();
 
     if (slowed && !loadingDone) {
-      log(list, "This browser never fired loadingdone, the event autoSplit listens to: no re-split", "bad");
+      log(list, "This browser never fired loadingdone, the event autoSplit waits for to re-split", "bad");
     }
   });
 
