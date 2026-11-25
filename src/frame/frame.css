@@ -96,19 +96,20 @@
 }
 
 /* All at the top on a phone: the bottom of a narrow screen is the demo's own (hints, controls).
-   It scrolls away with the page instead of sitting over a demo that scrolls. */
+   In the flow, above the demo: it takes its own height, so the demo starts below it instead of under it,
+   and it scrolls away with the page. No bottom padding: the demo's own top padding is the gap. */
 @media (max-width: 767px) {
   .frame {
-    position: absolute;
+    position: relative;
+    inset: auto;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto 1fr;
+    grid-template-rows: auto auto auto;
     grid-template-areas:
       "effect"
       "author"
-      "steps"
-      ".";
+      "steps";
     gap: 8px;
-    padding: 16px;
+    padding: 16px 16px 0;
     font-size: 12px;
   }
 
